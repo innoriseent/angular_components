@@ -7,7 +7,8 @@ export const environment = {
   appVersion: 'v726demo1',
   USERDATA_KEY: 'authf649fc9a5f55',
   isMockEnabled: true,
-  apiUrl: 'https://your-domain.com/api'
+  apiUrl: 'https://your-domain.com/api',
+  initialUrl: 'http://api.crm.local/v1/ra/initial'
 };
 
 /*
