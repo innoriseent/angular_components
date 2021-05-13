@@ -1,5 +1,5 @@
 <!--begin::Signin-->
-<div class="login-form login-signin mt-5">
+<div class="login-form login-signin">
   <!--begin::Form-->
   <form
     class="form"
@@ -8,30 +8,50 @@
     id="kt_login_signin_form"
     (ngSubmit)="submit()"
   >
+    <!--begin::Title-->
+    <div class="pb-13 pt-lg-0 pt-5">
+      <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+        Welcome to Metronic
+
+      </h3>
+      <span class="text-muted font-weight-bold font-size-h4"
+        >New Here?
+        <a
+          routerLink="/auth/registration"
+          id="kt_login_signup"
+          class="text-primary font-weight-bolder"
+          >{{ "AUTH.GENERAL.SIGNUP_BUTTON" | translate }}</a
+        >
+      </span>
+    </div>
+    <!--end::Title-->
+
+    <!-- begin::Alert info-->
+    <ng-container *ngIf="!hasError">
+      <div class="mb-10 alert alert-custom alert-light-info alert-dismissible">
+        <div class="alert-text">
+          Use account <strong>{{ defaultAuth.email }}</strong> and password
+          <strong>{{ defaultAuth.password }}</strong> to continue.
+        </div>
+      </div>
+    </ng-container>
+    <!-- end::Alert info-->
+
     <!-- begin::Alert error-->
     <ng-container *ngIf="hasError">
-      <div class="mb-10 alert alert-custom alert-light-danger alert-dismissible">
+      <div
+        class="mb-10 alert alert-custom alert-light-danger alert-dismissible"
+      >
         <div class="alert-text">The login details are incorrect</div>
       </div>
     </ng-container>
     <!-- end::Alert error-->
 
-    <!--begin::Title-->
-    <div class="pb-13 pt-lg-0 pt-5">
-      <div class="d-flex align-items-center">
-          <img class="w-25" [src]="(initialData|async)?.msp.logo" alt="">
-          <div>
-            {{ (initialData|async)?.msp.name }}
-          </div>
-      </div>
-    </div>
-    <!--end::Title-->
-
     <!--begin::Form group-->
     <div class="form-group">
       <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
       <input
-        class="form-control py-7 px-6"
+        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
         type="email"
         name="email"
         formControlName="email"
@@ -79,24 +99,23 @@
         <label class="font-size-h6 font-weight-bolder text-dark pt-5"
           >Password</label
         >
-
+        <a
+          routerLink="/auth/forgot-password"
+          class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
+          id="kt_login_forgot"
+        >
+          Forgot Password ?
+        </a>
       </div>
 
       <input
-        class="form-control py-7 px-6"
+        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
         type="password"
         name="password"
         autocomplete="off"
         formControlName="password"
         [ngClass]="{ 'is-invalid': loginForm.controls['password'].invalid }"
       />
-      <a
-              routerLink="/auth/forgot-password"
-              class=""
-              id="kt_login_forgot"
-      >
-        Forgot Password ?
-      </a>
       <ng-container
         [ngTemplateOutlet]="formError"
         [ngTemplateOutletContext]="{
@@ -129,10 +148,20 @@
       <button
         type="submit"
         id="kt_login_signin_submit"
-        class="btn btn-primary font-weight-bolder py-4 my-3 mr-3"
+        class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
         [disabled]="loginForm.invalid"
       >
         Sign In
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg"
+      >
+        <span class="svg-icon svg-icon-md">
+          <img src="./assets/media/svg/social-icons/google.svg" />
+        </span>
+        Sign in with Google
       </button>
 
       <ng-container *ngIf="isLoading$ | async">

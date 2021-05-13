@@ -36,27 +36,27 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   }
 
   loadForm() {
-    this.formGroup = this.fb.group({
-      currentPassword: [this.user.password, Validators.required],
-      password: ['', Validators.required],
-      cPassword: ['', Validators.required]
-    }, {
-      validator: ConfirmPasswordValidator.MatchPassword
-    });
+    // this.formGroup = this.fb.group({
+    //   currentPassword: [this.user.password, Validators.required],
+    //   password: ['', Validators.required],
+    //   cPassword: ['', Validators.required]
+    // }, {
+    //   validator: ConfirmPasswordValidator.MatchPassword
+    // });
   }
 
   save() {
-    this.formGroup.markAllAsTouched();
-    if (!this.formGroup.valid) {
-      return;
-    }
-
-    this.user.password = this.formGroup.value.password;
-    this.userService.isLoadingSubject.next(true);
-    setTimeout(() => {
-      this.userService.currentUserSubject.next(Object.assign({}, this.user));
-      this.userService.isLoadingSubject.next(false);
-    }, 2000);
+    // this.formGroup.markAllAsTouched();
+    // if (!this.formGroup.valid) {
+    //   return;
+    // }
+    //
+    // this.user.password = this.formGroup.value.password;
+    // this.userService.isLoadingSubject.next(true);
+    // setTimeout(() => {
+    //   this.userService.currentUserSubject.next(Object.assign({}, this.user));
+    //   this.userService.isLoadingSubject.next(false);
+    // }, 2000);
   }
 
   cancel() {

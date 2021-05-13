@@ -30,10 +30,10 @@ export class AuthHTTPService {
         }
 
         const user = result.find((u) => {
-          return (
-            u.email.toLowerCase() === email.toLowerCase() &&
-            u.password === password
-          );
+          // return (
+          //   // u.email.toLowerCase() === email.toLowerCase() &&
+          //   // u.password === password
+          // );
         });
         if (!user) {
           return notFoundError;
@@ -49,11 +49,11 @@ export class AuthHTTPService {
   }
 
   createUser(user: UserModel): Observable<any> {
-    user.roles = [2]; // Manager
-    user.authToken = 'auth-token-' + Math.random();
-    user.refreshToken = 'auth-token-' + Math.random();
-    user.expiresIn = new Date(Date.now() + 100 * 24 * 60 * 60 * 1000);
-    user.pic = './assets/media/users/default.jpg';
+    // user.roles = [2]; // Manager
+    // user.authToken = 'auth-token-' + Math.random();
+    // user.refreshToken = 'auth-token-' + Math.random();
+    // user.expiresIn = new Date(Date.now() + 100 * 24 * 60 * 60 * 1000);
+    // user.pic = './assets/media/users/default.jpg';
 
     return this.http.post<UserModel>(API_USERS_URL, user);
   }
