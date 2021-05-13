@@ -36,23 +36,23 @@ export class EmailSettingsComponent implements OnInit, OnDestroy {
   }
 
   loadForm() {
-    this.formGroup = this.fb.group({
-      emailNotification: [this.user.emailSettings.emailNotification],
-      sendCopyToPersonalEmail: [this.user.emailSettings.sendCopyToPersonalEmail],
-      youHaveNewNotifications: [this.user.emailSettings.activityRelatesEmail.youHaveNewNotifications],
-      youAreSentADirectMessage: [this.user.emailSettings.activityRelatesEmail.youAreSentADirectMessage],
-      someoneAddsYouAsAsAConnection: [this.user.emailSettings.activityRelatesEmail.someoneAddsYouAsAsAConnection],
-      uponNewOrder: [this.user.emailSettings.activityRelatesEmail.uponNewOrder],
-      newMembershipApproval: [this.user.emailSettings.activityRelatesEmail.newMembershipApproval],
-      memberRegistration: [this.user.emailSettings.activityRelatesEmail.memberRegistration],
-      newsAboutKeenthemesProductsAndFeatureUpdates:
-        [this.user.emailSettings.updatesFromKeenthemes.newsAboutKeenthemesProductsAndFeatureUpdates],
-      tipsOnGettingMoreOutOfKeen: [this.user.emailSettings.updatesFromKeenthemes.tipsOnGettingMoreOutOfKeen],
-      thingsYouMissedSindeYouLastLoggedIntoKeen: [this.user.emailSettings.updatesFromKeenthemes.thingsYouMissedSindeYouLastLoggedIntoKeen],
-      newsAboutMetronicOnPartnerProductsAndOtherServices:
-        [this.user.emailSettings.updatesFromKeenthemes.newsAboutMetronicOnPartnerProductsAndOtherServices],
-      tipsOnMetronicBusinessProducts: [this.user.emailSettings.updatesFromKeenthemes.tipsOnMetronicBusinessProducts]
-    });
+    // this.formGroup = this.fb.group({
+    //   emailNotification: [this.user.emailSettings.emailNotification],
+    //   sendCopyToPersonalEmail: [this.user.emailSettings.sendCopyToPersonalEmail],
+    //   youHaveNewNotifications: [this.user.emailSettings.activityRelatesEmail.youHaveNewNotifications],
+    //   youAreSentADirectMessage: [this.user.emailSettings.activityRelatesEmail.youAreSentADirectMessage],
+    //   someoneAddsYouAsAsAConnection: [this.user.emailSettings.activityRelatesEmail.someoneAddsYouAsAsAConnection],
+    //   uponNewOrder: [this.user.emailSettings.activityRelatesEmail.uponNewOrder],
+    //   newMembershipApproval: [this.user.emailSettings.activityRelatesEmail.newMembershipApproval],
+    //   memberRegistration: [this.user.emailSettings.activityRelatesEmail.memberRegistration],
+    //   newsAboutKeenthemesProductsAndFeatureUpdates:
+    //     [this.user.emailSettings.updatesFromKeenthemes.newsAboutKeenthemesProductsAndFeatureUpdates],
+    //   tipsOnGettingMoreOutOfKeen: [this.user.emailSettings.updatesFromKeenthemes.tipsOnGettingMoreOutOfKeen],
+    //   thingsYouMissedSindeYouLastLoggedIntoKeen: [this.user.emailSettings.updatesFromKeenthemes.thingsYouMissedSindeYouLastLoggedIntoKeen],
+    //   newsAboutMetronicOnPartnerProductsAndOtherServices:
+    //     [this.user.emailSettings.updatesFromKeenthemes.newsAboutMetronicOnPartnerProductsAndOtherServices],
+    //   tipsOnMetronicBusinessProducts: [this.user.emailSettings.updatesFromKeenthemes.tipsOnMetronicBusinessProducts]
+    // });
   }
 
   save() {

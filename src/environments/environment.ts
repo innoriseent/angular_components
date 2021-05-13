@@ -8,7 +8,10 @@ export const environment = {
   USERDATA_KEY: 'authf649fc9a5f55',
   isMockEnabled: true,
   apiUrl: 'https://your-domain.com/api',
-  initialUrl: 'http://api.crm.local/v1/ra/initial'
+  initialUrl: 'http://api.crm.local/v1/ra/initial',
+  signInUrl: 'http://api.crm.local/v1/oauth/token',
+  client_id: 2,
+  client_secret: '23R7soBg9cXMPB1Q8iXWpSWm9GsrB0jPulMdRcQR',
 };
 
 /*
